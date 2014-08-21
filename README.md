@@ -72,7 +72,7 @@ The following metrics are reported.
 	MinThreadPoolSize
 
 #Custom Dashboard
-![]()
+![](https://github.com/Appdynamics/glassfish-monitoring-extension/raw/master/glassfish-monitor.png)
 
 ##Contributing
 
