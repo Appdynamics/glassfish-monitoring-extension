@@ -1,0 +1,28 @@
+# GlassFish instance particulars
+
+server:
+    host: "localhost"
+    port: 8686
+    username: "admin"
+    password: "JTVzupe26f"
+
+# GlassFish MBeans
+mbeans:
+    domainName: "amx"
+    types: {EJBModule:[state],
+            J2EEApplication:[state],
+            J2EEServer:[state],
+            WebModule:[state],
+            connector-connection-pool:[ConnectionCreationRetryAttempts,ConnectionCreationRetryIntervalInSeconds,IdleTimeoutInSeconds,
+                                       MaxConnectionUsageCount,MaxPoolSize,MaxWaitTimeInMillis,PoolResizeQuantity,SteadyPoolSize],
+            ejb-container:[CacheIdleTimeoutInSeconds,CacheResizeQuantity,MaxCacheSize,MaxPoolSize,PoolIdleTimeoutInSeconds,
+                           PoolResizeQuantity,RemovalTimeoutInSeconds,SteadyPoolSize],
+            http:[CompressionMinSizeBytes,ConnectionUploadTimeoutMillis,HeaderBufferLengthBytes,MaxConnections,MaxPostSizeBytes,
+                  MaxRequestHeaders,MaxResponseHeaders,RequestTimeoutSeconds,SendBufferSizeBytes,TimeoutSeconds],
+            jdbc-connection-pool:[ConnectionCreationRetryAttempts,ConnectionCreationRetryIntervalInSeconds,ConnectionLeakTimeoutInSeconds,
+                                  IdleTimeoutInSeconds,MaxConnectionUsageCount,MaxPoolSize,MaxWaitTimeInMillis,PoolResizeQuantity,
+                                  StatementCacheSize,StatementLeakTimeoutInSeconds,SteadyPoolSize],
+            thread-pool:[IdleThreadTimeoutSeconds,MaxQueueSize,MaxThreadPoolSize,MinThreadPoolSize]}
+
+#prefix used to show up metrics in AppDynamics
+metricPrefix:  "Custom Metrics|GlassFish|"

@@ -1,4 +1,38 @@
-glassfish-monitoring-extension
-==============================
+# AppDynamics GlassFish Monitoring Extension
 
-Glassfish Monitoring Extension
+This extension works only with the standalone machine agent.
+
+##Use Case
+
+GlassFish is the reference implementation of Java EE and as such supports Enterprise JavaBeans, JPA, JavaServer Faces, JMS, RMI, JavaServer Pages, servlets, etc. This allows developers to create enterprise applications that are portable and scalable, and that integrate with legacy technologie.
+
+##Installation
+
+1. Run "mvn clean install"
+2. Download and unzip the file 'target/GlassFishMonitor.zip' to \<machineagent install dir\}/monitors
+3. Open <b>monitor.xml</b> and configure the GlassFish arguments
+
+<pre>
+&lt;!-- The configuration file which lists out the servar details and metrics to be included from monitoring on controller--&gt;
+&lt;argument name="config-file" is-required="true" default-value="monitors/GlassFishMonitor/config.yml" /&gt;
+</pre>
+
+##Metrics
+The following metrics are reported.
+
+###Subscription
+
+#Custom Dashboard
+![]()
+
+##Contributing
+
+Always feel free to fork and contribute any changes directly here on GitHub.
+
+##Community
+
+Find out more in the [AppSphere]() community.
+
+##Support
+
+For any questions or feature request, please contact [AppDynamics Center of Excellence](mailto:ace-request@appdynamics.com).
