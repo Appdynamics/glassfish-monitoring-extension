@@ -20,7 +20,56 @@ GlassFish is the reference implementation of Java EE and as such supports Enterp
 ##Metrics
 The following metrics are reported.
 
-###Subscription
+###connector-connection-pool
+	ConnectionCreationRetryAttempts
+	ConnectionCreationRetryIntervalInSeconds
+	IdleTimeoutInSeconds
+	MaxConnectionUsageCount
+	MaxPoolSize
+	MaxWaitTimeInMillis
+	PoolResizeQuantity
+	SteadyPoolSize
+	
+###ejb-container
+	CacheIdleTimeoutInSeconds
+	CacheResizeQuantity
+	MaxCacheSize
+	MaxPoolSize
+	PoolIdleTimeoutInSeconds
+	PoolResizeQuantity
+	RemovalTimeoutInSeconds
+	SteadyPoolSize
+	
+###http
+	CompressionMinSizeBytes
+	ConnectionUploadTimeoutMillis
+	HeaderBufferLengthBytes
+	MaxConnections
+	MaxPostSizeBytes
+	MaxRequestHeaders
+	MaxResponseHeaders
+	RequestTimeoutSeconds
+	SendBufferSizeBytes
+	TimeoutSeconds
+	
+###jdbc-connection-pool
+	ConnectionCreationRetryAttempts
+	ConnectionCreationRetryIntervalInSeconds
+	ConnectionLeakTimeoutInSeconds
+	IdleTimeoutInSeconds
+	MaxConnectionUsageCount
+	MaxPoolSize
+	MaxWaitTimeInMillis
+	PoolResizeQuantity
+	StatementCacheSize
+	StatementLeakTimeoutInSeconds
+	SteadyPoolSize
+
+###thread-pool
+	IdleThreadTimeoutSeconds
+	MaxQueueSize
+	MaxThreadPoolSize
+	MinThreadPoolSize
 
 #Custom Dashboard
 ![]()
