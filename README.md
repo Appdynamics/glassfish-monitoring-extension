@@ -21,6 +21,57 @@ Please enable JMX for the glassfish container if not already enabled.
 &lt;argument name="config-file" is-required="true" default-value="monitors/GlassFishMonitor/config.yml" /&gt;
 </pre>
 
+##Configuration
+
+Note : Please make sure not to use tab (\t) while editing yaml files. You can validate the yaml file using a [yaml validator](http://yamllint.com/)
+
+1. Configure the GlassFish Extension by editing the config.yml file in `<MACHINE_AGENT_HOME>/monitors/GlassFishMonitor/`.
+2. Specify the container host, JMX port, username and password in the config.yml. Configure the MBeans for this extension to report the metrics to Controller. By default, `amx` is the domain name. 
+
+
+   For eg.
+   ```
+    # GlassFish instance particulars
+
+	server:
+	    host: "localhost"
+	    port: 8686
+	    username: "admin"
+	    password: "JTVzupe26f"
+	
+	# GlassFish MBeans
+	mbeans:
+	    domainName: "amx"
+	    types: {EJBModule:[state],
+	            J2EEApplication:[state],
+	            J2EEServer:[state],
+	            WebModule:[state],
+	            connector-connection-pool:[ConnectionCreationRetryAttempts,ConnectionCreationRetryIntervalInSeconds,IdleTimeoutInSeconds,
+	                                       MaxConnectionUsageCount,MaxPoolSize,MaxWaitTimeInMillis,PoolResizeQuantity,SteadyPoolSize],
+	            ejb-container:[CacheIdleTimeoutInSeconds,CacheResizeQuantity,MaxCacheSize,MaxPoolSize,PoolIdleTimeoutInSeconds,
+	                           PoolResizeQuantity,RemovalTimeoutInSeconds,SteadyPoolSize],
+	            http:[CompressionMinSizeBytes,ConnectionUploadTimeoutMillis,HeaderBufferLengthBytes,MaxConnections,MaxPostSizeBytes,
+	                  MaxRequestHeaders,MaxResponseHeaders,RequestTimeoutSeconds,SendBufferSizeBytes,TimeoutSeconds],
+	            jdbc-connection-pool:[ConnectionCreationRetryAttempts,ConnectionCreationRetryIntervalInSeconds,ConnectionLeakTimeoutInSeconds,
+	                                  IdleTimeoutInSeconds,MaxConnectionUsageCount,MaxPoolSize,MaxWaitTimeInMillis,PoolResizeQuantity,
+	                                  StatementCacheSize,StatementLeakTimeoutInSeconds,SteadyPoolSize],
+	            thread-pool:[IdleThreadTimeoutSeconds,MaxQueueSize,MaxThreadPoolSize,MinThreadPoolSize]}
+	
+	#prefix used to show up metrics in AppDynamics
+	metricPrefix:  "Custom Metrics|GlassFish|"
+
+   ```
+   
+3. Configure the path to the config.yml file by editing the <task-arguments> in the monitor.xml file in the `<MACHINE_AGENT_HOME>/monitors/GlassFishMonitor/` directory. Below is the sample
+
+     ```
+     <task-arguments>
+         <!-- config file-->
+          <argument name="config-file" is-required="true" default-value="monitors/GlassFishMonitor/config.yml" />
+          ....
+     </task-arguments>
+     ```
+
 ##Metrics
 The following metrics are reported.
 
