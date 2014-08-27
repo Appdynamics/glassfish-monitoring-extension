@@ -6,6 +6,10 @@ This extension works only with the standalone machine agent.
 
 GlassFish is the reference implementation of Java EE and as such supports Enterprise JavaBeans, JPA, JavaServer Faces, JMS, RMI, JavaServer Pages, servlets, etc. This allows developers to create enterprise applications that are portable and scalable, and that integrate with legacy technologie.
 
+##Prerequisites
+
+Please enable JMX for the glassfish container if not already enabled.
+
 ##Installation
 
 1. Run "mvn clean install"
